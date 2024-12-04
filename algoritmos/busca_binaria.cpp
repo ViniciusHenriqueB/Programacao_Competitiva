@@ -1,7 +1,9 @@
 #include <vector>
 using namespace std;
 
-int buscaBinaria(vector<int> v, int lenght, int query) {
+// Obs.: Usar const antes de vector<int>& v é opcional neste caso
+
+int buscaBinaria(vector<int>& v, int lenght, int query) {
     int first = 0;
     int last = lenght - 1;
     int mid;
