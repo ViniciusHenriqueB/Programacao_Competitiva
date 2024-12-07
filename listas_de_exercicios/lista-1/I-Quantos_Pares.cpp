@@ -3,40 +3,44 @@ using namespace std;
 
 #define fast_io ios::sync_with_stdio(false); cin.tie(0); cout.tie(0);
 
-// Time limit exceeded on test 4
 
 int main() {
     fast_io;
-    int t, n, l, r, a, ans, maior, soma;
+    long long t, n, l, r, a, ans, min, max, atual, i_min, i_max;
     cin >> t;
     for (int i = 0; i < t; i++) {
         cin >> n >> l >> r;
-        maior = 1;
-        ans = 0;
+
         vector<int> v;
         for (int i = 0; i < n; i++) {
             cin >> a; 
             v.push_back(a);
         }
         sort(v.begin(), v.end());
-        maior = v[n - 1];
 
+        ans = 0;
+ 
         for (int i = 0; i < n; i++) {
-            soma = v[i] + maior;
-            if (soma < l) 
-                continue;
-            if (v[i] >= r)
+            atual = v[i];
+            if (atual > r) 
                 break;
-            for (int j = i + 1; j < n; j++) {
-                if (v[i] + v[j] > r) 
-                    break;
-                
-                if (v[i] + v[j] >= l && v[i] + v[j] <= r) 
-                    ans += 1;
+            min = l - atual;
+            max = r - atual;
+            if (max >= atual && min > atual) {
+                i_min = lower_bound(v.begin(), v.end(), min) - v.begin();
+                i_max = upper_bound(v.begin(), v.end(), max) - v.begin();
+                ans += i_max - i_min;
+            }
+            else if (max >= atual && min <= atual) {
+                min = atual;
+                i_min = lower_bound(v.begin(), v.end(), min) - v.begin();
+                if (i_min < i)
+                    i_min = i;
+                i_max = upper_bound(v.begin(), v.end(), max) - v.begin();
+                ans += i_max - i_min - 1;
             }
         }
-
-
+        
         cout << ans << "\n";
     }
     
