@@ -36,7 +36,7 @@ int main() {
 
     // Agora preciso verificar o maior elemento da fila de prioridade restante
 
-    while (!minCaixas.empty()) {  // O(N)
+    while (!minCaixas.empty()) {  // O(Nlog(N))
         if (minCaixas.top()[0] > ans)
             ans = minCaixas.top()[0];
         minCaixas.pop();
@@ -46,4 +46,4 @@ int main() {
     return 0;
 }
 
-// O(Mlog(N))
+// O((M + N)log(N))
