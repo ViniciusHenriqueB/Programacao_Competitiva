@@ -3,6 +3,8 @@ using namespace std;
 
 #define fast_io ios::sync_with_stdio(false); cin.tie(0); cout.tie(0);
 #define pb push_back
+#define ff first
+#define ss second
 typedef long long ll;
 
 int main() {
