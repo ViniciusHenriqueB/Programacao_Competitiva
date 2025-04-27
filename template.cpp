@@ -5,7 +5,8 @@ using namespace std;
 #define pb push_back
 #define ff first
 #define ss second
-typedef long long ll;
+using pii = pair<int, int>;
+using ll = long long;
 
 int main() {
     fast_io
