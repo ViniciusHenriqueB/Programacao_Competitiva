@@ -1,5 +1,0 @@
-- Repositório UnBalloon:
-https://github.com/UnBalloon/programacao-competitiva
-
-- Repositório da disciplina:
-https://github.com/viniciusrpb/cic0169_programacao_competitiva

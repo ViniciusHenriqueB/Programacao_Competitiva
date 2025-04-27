@@ -1,1 +1,0 @@
-g++ programa.cpp -std=c++17 -o programa 
